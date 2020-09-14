@@ -14,14 +14,18 @@ public class Application {
         Square squares[] = new Square[5];
         Triangle triangle = new Triangle(10, 20);
 
-
+        // Instancing the figures attributes
+        for(int i=0, s=2; i< squares.length; i++, s+=2) {
+            squares[i] = new Square(s);
+        }
         printFigure(circle1);
+        printFigure(circle2);
         printFigure(rectangle);
+        printFigure(triangle);
+        //For each:
         for (Square square : squares) {
             printFigure(square);
         }
-        printFigure(triangle);
-
     }
 
     public static void printFigure(Circle circle) {
@@ -43,6 +47,4 @@ public class Application {
         triangle.draw();
         System.out.println("Area: " + triangle.getArea());
     }
-
-
 }
